@@ -38,7 +38,15 @@ public class PokemonMetadata {
 		this.defense = defense;
 		this.stamina = stamina;
 	}
-	
+	public PokemonMetadata() {
+        // C'est quand même plus rapide avec un constructeur par défaut!
+        this.index = 0;
+        this.name = "Pikachu";
+        this.attack = 0;
+        this.defense = 0;
+        this.stamina = 0;
+    }
+
 	/** Index getter. **/
 	public int getIndex() {
 		return index;

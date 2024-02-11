@@ -1,27 +1,32 @@
-/*package fr.univavignon.pokedex.api;
+package fr.univavignon.pokedex.api;
 
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import org.junit.Before;
 import org.junit.Test;
-import static org.mockito.Mockito.*;
 
 public class IPokemonMetadataProviderTest {
 
+    private IPokemonMetadataProvider pokemonMetadataProvider;
+
+    @Before
+    public void setUp() {
+        pokemonMetadataProvider = mock(IPokemonMetadataProvider.class);
+    }
+
     @Test
-    public void testGetPokemonMetadata() {
-        // Je crée mon mock
-        IPokemonMetadataProvider pokemonMetadataProvider = mock(IPokemonMetadataProvider.class);
+    public void testGetPokemonMetadata() throws PokedexException {
+        PokemonMetadata expectedMetadata = new PokemonMetadata();
 
-        // Définition du comportement du mock
-        when(pokemonMetadataProvider.getPokemonMetadata(1)).thenReturn(new PokemonMetadata("Bulbasaur", 1, 45, 49, 49));
+        // Mocking the behavior of getPokemonMetadata method
+        when(pokemonMetadataProvider.getPokemonMetadata(0)).thenReturn(expectedMetadata);
 
-        // Utilisation du mock dans le test
-        PokemonMetadata bulbasaurMetadata = pokemonMetadataProvider.getPokemonMetadata(1);
+        // Calling the method to get PokemonMetadata
+        PokemonMetadata actualMetadata = pokemonMetadataProvider.getPokemonMetadata(0);
 
-    
-        assertEquals("Bulbasaur", bulbasaurMetadata.getName());
-        assertEquals(1, bulbasaurMetadata.getIndex());
-        assertEquals(45, bulbasaurMetadata.getAttack());
-        assertEquals(49, bulbasaurMetadata.getDefense());
-        assertEquals(49, bulbasaurMetadata.getStamina());
+        // Asserting that the returned metadata is correct
+        assertEquals("The returned PokemonMetadata should match the expected metadata", expectedMetadata, actualMetadata);
     }
 }
-*/

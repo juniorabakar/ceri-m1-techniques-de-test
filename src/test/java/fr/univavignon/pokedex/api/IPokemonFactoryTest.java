@@ -1,28 +1,44 @@
-/*package fr.univavignon.pokedex.api;
+package fr.univavignon.pokedex.api;
 
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import org.junit.Before;
 import org.junit.Test;
-import static org.mockito.Mockito.*;
 
 public class IPokemonFactoryTest {
 
+    private IPokemonFactory pokemonFactory;
+
+    @Before
+    public void setUp() {
+        pokemonFactory = mock(IPokemonFactory.class);
+    }
+
     @Test
     public void testCreatePokemon() {
-        // Création du mock de l'interface IPokemonFactory
-        IPokemonFactory pokemonFactory = mock(IPokemonFactory.class);
+        Pokemon expectedPokemon = new Pokemon(
+            1,              // Index
+            "Bulbasaur",    // Nom
+            10,             // Niveau d'attaque
+            10,             // Niveau de défense
+            10,             // Niveau d'endurance
+            100,            // Niveau de combat
+            100,            // Niveau de vie
+            100,            // Niveau de poussière d'étoile
+            50,             // Nombre de bonbons
+            0.8             // Pourcentage de perfection
+        );
+        
 
-        // Définition du comportement du mock
-        when(pokemonFactory.createPokemon(1, 50, 30, 40, 20)).thenReturn(new Pokemon(1, "Bulbasaur", 50, 30, 40, 20));
+        // Mocking the behavior of createPokemon method
+        when(pokemonFactory.createPokemon(100,100,100,100,100)).thenReturn(expectedPokemon);
 
-        // Utilisation du mock dans le test
-        Pokemon bulbasaur = pokemonFactory.createPokemon(1, 50, 30, 40, 20);
+        // Calling the method to create a Pokemon
+        Pokemon actualPokemon = pokemonFactory.createPokemon(100,100,100,100,100);
 
-        // Assertions
-        assertEquals(1, bulbasaur.getIndex());
-        assertEquals("Bulbasaur", bulbasaur.getName());
-        assertEquals(50, bulbasaur.getAttack());
-        assertEquals(30, bulbasaur.getDefense());
-        assertEquals(40, bulbasaur.getStamina());
-        assertEquals(20, bulbasaur.getCp());
+        // Asserting that the returned Pokemon is correct
+        assertEquals("The returned Pokemon should match the expected Pokemon", expectedPokemon, actualPokemon);
     }
 }
-*/
