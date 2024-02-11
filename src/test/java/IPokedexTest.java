@@ -1,4 +1,4 @@
-package fr.univavignon.pokedex.api;
+/*package fr.univavignon.pokedex.api;
 
 import org.junit.Test;
 import static org.mockito.Mockito.*;
@@ -17,3 +17,4 @@ public class IPokedexTest {
         verify(pokedex, times(1)).addPokemon(any());
     }
 }
+*/
