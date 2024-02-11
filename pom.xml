@@ -12,6 +12,7 @@ http://maven.apache.org/maven-v4_0_0.xsd"
     <name>projectTP1</name>
     <url>https://github.com/abakarjunior/ceri-m1-techniques-de-test</url>
    <build>
+   <testSourceDirectory>src/test/java</testSourceDirectory>
    <plugins>
       <plugin>
          <groupId>org.apache.maven.plugins</groupId>
