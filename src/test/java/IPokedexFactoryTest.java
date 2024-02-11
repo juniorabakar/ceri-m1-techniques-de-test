@@ -4,7 +4,6 @@ import org.junit.Test;
 import static org.mockito.Mockito.*;
 
 public class IPokedexFactoryTest {
-
     @Test
     public void testCreatePokedex() {
         // Création du mock de l'interface IPokedexFactory
