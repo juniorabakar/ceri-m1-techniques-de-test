@@ -19,7 +19,7 @@ public class IPokemonFactoryTest {
     @Test
     public void testCreatePokemon() {
         Pokemon expectedPokemon = new Pokemon(
-            151,              // Index
+            -151,              // Index
             "Bulbasaur",    // Nom
             16,             // Niveau d'attaque
             16,             // Niveau de défense
@@ -39,7 +39,7 @@ public class IPokemonFactoryTest {
         // Calling the method to create a Pokemon
         Pokemon actualPokemon = pokemonFactory.createPokemon(100,100,100,100,100);
 
-        
+
         // Asserting that the returned Pokemon is correct
         assertEquals("The returned Pokemon should match the expected Pokemon", expectedPokemon, actualPokemon);
     }
