@@ -2,6 +2,8 @@
 
 ## Introduction
 
+Abakar Oumar Tidjane junior
+ILSEN
 Vous allez à travers ces projet mettre en application une partie des aspects évoqués en cours vis à vis des techniques de tests.  
 Pour cela nous allons réaliser un projet logiciel de petite taille, en suivant la roadmap suivante : 
 - Setup du projet

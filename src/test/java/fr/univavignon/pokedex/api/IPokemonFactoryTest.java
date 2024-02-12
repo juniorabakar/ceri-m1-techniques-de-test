@@ -19,11 +19,11 @@ public class IPokemonFactoryTest {
     @Test
     public void testCreatePokemon() {
         Pokemon expectedPokemon = new Pokemon(
-            1,              // Index
+            151,              // Index
             "Bulbasaur",    // Nom
-            10,             // Niveau d'attaque
-            10,             // Niveau de défense
-            10,             // Niveau d'endurance
+            16,             // Niveau d'attaque
+            16,             // Niveau de défense
+            16,             // Niveau d'endurance
             100,            // Niveau de combat
             100,            // Niveau de vie
             100,            // Niveau de poussière d'étoile
