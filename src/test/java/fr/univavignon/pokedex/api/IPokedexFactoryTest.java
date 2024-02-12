@@ -1,22 +1,29 @@
-/*package fr.univavignon.pokedex.api;
+package fr.univavignon.pokedex.api;
 
+import static org.junit.Assert.assertNotNull;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import org.junit.Before;
 import org.junit.Test;
-import static org.mockito.Mockito.*;
 
 public class IPokedexFactoryTest {
+
+    private IPokedexFactory pokedexFactory;
+
+    @Before
+    public void setUp() {
+        pokedexFactory = mock(IPokedexFactory.class);
+    }
+
     @Test
     public void testCreatePokedex() {
-        // Création du mock de l'interface IPokedexFactory
-        IPokedexFactory pokedexFactory = mock(IPokedexFactory.class);
+        IPokemonMetadataProvider metadataProvider = mock(IPokemonMetadataProvider.class);
+        IPokemonFactory pokemonFactory = mock(IPokemonFactory.class);
+        IPokedex expectedPokedex = mock(IPokedex.class); 
+        when(pokedexFactory.createPokedex(metadataProvider, pokemonFactory)).thenReturn(expectedPokedex);
 
-        // Définition du comportement du mock
-        when(pokedexFactory.createPokedex(any())).thenReturn(new Pokedex());
-
-        // Utilisation du mock dans le test
-        IPokedex pokedex = pokedexFactory.createPokedex(null);
-
-        // Assertions
-        assertNotNull(pokedex);
+        IPokedex pokedex = pokedexFactory.createPokedex(metadataProvider, pokemonFactory);
+        assertNotNull("Le pokedex créé ne devrait pas être nul", pokedex);
     }
 }
-*/

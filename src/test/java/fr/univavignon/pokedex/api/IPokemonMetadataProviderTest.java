@@ -27,6 +27,6 @@ public class IPokemonMetadataProviderTest {
         PokemonMetadata actualMetadata = pokemonMetadataProvider.getPokemonMetadata(0);
 
         // Asserting that the returned metadata is correct
-        assertEquals("The returned PokemonMetadata should match the expected metadata", expectedMetadata, actualMetadata);
+        assertEquals("Les PokemonMetadata retournées doivent correspondre aux métadonnées attendues", expectedMetadata, actualMetadata);
     }
 }
