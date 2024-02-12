@@ -21,8 +21,8 @@ public class IPokedexTest {
     @Before
     public void setUp() {
         pokedex = mock(IPokedex.class);
-        pokemon1 = new Pokemon(1, "Bulbasaur", 14, 13, 12, 100, 100, 100, 50, 0.8);
-        pokemon2 = new Pokemon(2, "Charmander", 15, 15, 15, 90, 90, 90, 40, 0.7);
+        pokemon1 = new Pokemon(1, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 0.56);
+        pokemon2 = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 1);
     }
 
  /* Ce test n'arrive pas à passer
