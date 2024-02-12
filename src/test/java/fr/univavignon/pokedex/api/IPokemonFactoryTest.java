@@ -17,6 +17,7 @@ public class IPokemonFactoryTest {
     }
 
     @Test
+    //Test avec un index négatif pour voir ce que j'obtiens
     public void testCreatePokemon() {
         Pokemon expectedPokemon = new Pokemon(
             -151,              // Index
@@ -31,16 +32,9 @@ public class IPokemonFactoryTest {
             0.8             // Pourcentage de perfection
         );
         
-
-        // Mocking the behavior of createPokemon method
         when(pokemonFactory.createPokemon(100,100,100,100,100)).thenReturn(expectedPokemon);
 
-
-        // Calling the method to create a Pokemon
         Pokemon actualPokemon = pokemonFactory.createPokemon(100,100,100,100,100);
-
-
-        // Asserting that the returned Pokemon is correct
         assertEquals("The returned Pokemon should match the expected Pokemon", expectedPokemon, actualPokemon);
     }
 }
