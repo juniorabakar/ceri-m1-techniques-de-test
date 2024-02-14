@@ -26,4 +26,5 @@ public class IPokedexFactoryTest {
         IPokedex pokedex = pokedexFactory.createPokedex(metadataProvider, pokemonFactory);
         assertNotNull("Le pokedex créé ne devrait pas être nul", pokedex);
     }
+    
 }
