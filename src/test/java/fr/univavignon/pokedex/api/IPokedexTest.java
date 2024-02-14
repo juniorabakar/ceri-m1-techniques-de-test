@@ -66,7 +66,6 @@ public class IPokedexTest {
         List<Pokemon> pokemons = new ArrayList<>();
         pokemons.add(pokemon1);
         pokemons.add(pokemon2);
-
         Comparator<Pokemon> comparator = Comparator.comparing(Pokemon::getIndex);
 
         when(pokedex.getPokemons(comparator)).thenReturn(pokemons);
