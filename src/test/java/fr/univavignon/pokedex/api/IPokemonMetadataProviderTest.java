@@ -20,13 +20,11 @@ public class IPokemonMetadataProviderTest {
     public void testGetPokemonMetadata() throws PokedexException {
         PokemonMetadata expectedMetadata = new PokemonMetadata();
 
-        // Mocking the behavior of getPokemonMetadata method
+    
         when(pokemonMetadataProvider.getPokemonMetadata(0)).thenReturn(expectedMetadata);
 
-        // Calling the method to get PokemonMetadata
         PokemonMetadata actualMetadata = pokemonMetadataProvider.getPokemonMetadata(0);
 
-        // Asserting that the returned metadata is correct
         assertEquals("Les PokemonMetadata retournées doivent correspondre aux métadonnées attendues", expectedMetadata, actualMetadata);
     }
 }
