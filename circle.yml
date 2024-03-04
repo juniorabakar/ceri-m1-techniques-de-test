@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Run Unit Tests
           command: mvn test
-      - run:  # Corrigé l'indentation ici
+      - run: 
           name: Coverage to Codecov
           command: |
             echo 'export CODECOV_TOKEN=${CODECOV_TOKEN}' >> $BASH_ENV

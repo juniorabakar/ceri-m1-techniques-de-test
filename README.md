@@ -1,6 +1,11 @@
 Abakar Oumar Tidjane junior
 ILSEN
 # UCE Génie Logiciel Avancé : Techniques de tests
+## MesBadges
+
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/juniorabakar/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/juniorabakar/ceri-m1-techniques-de-test/tree/master)
+[![codecov](https://codecov.io/gh/juniorabakar/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=UT2KBPTUOI)](https://codecov.io/gh/juniorabakar/ceri-m1-techniques-de-test)
+
 
 ## Introduction
 
