@@ -9,16 +9,16 @@ jobs:
 
     steps:
       - checkout
-
       - run:
           name: Run Unit Tests
           command: mvn test
-       - run:
+      - run:  # Corrigé l'indentation ici
           name: Coverage to Codecov
           command: |
             echo 'export CODECOV_TOKEN=${CODECOV_TOKEN}' >> $BASH_ENV
             source $BASH_ENV
             bash <(curl -s https://codecov.io/bash)
+
 workflows:
   version: 2
   build:
