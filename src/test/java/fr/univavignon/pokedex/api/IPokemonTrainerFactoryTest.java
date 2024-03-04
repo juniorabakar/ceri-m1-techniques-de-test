@@ -12,7 +12,7 @@ public class IPokemonTrainerFactoryTest {
 
     private IPokemonTrainerFactory trainerFactory;
     private IPokedexFactory pokedexFactory;
-
+//Test pour vérifier si tout va bien
     @Before
     public void setUp() {
         trainerFactory = mock(IPokemonTrainerFactory.class);
