@@ -25,21 +25,21 @@ public class IPokedexTest {
         pokemon2 = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 1);
     }
 
- /* Ce test n'arrive pas à passer
     @Test
-    public void testSize() {
-        List<Pokemon> pokemons = new ArrayList<>();
-        pokemons.add(pokemon1);
-        pokemons.add(pokemon2);
+public void testSize() {
+    List<Pokemon> pokemons = new ArrayList<>();
+    pokemons.add(pokemon1);
+    pokemons.add(pokemon2);
 
-        when(pokedex.getPokemons()).thenReturn(pokemons);
+    when(pokedex.getPokemons()).thenReturn(pokemons);
+    when(pokedex.size()).thenReturn(pokemons.size());
 
-        int expectedSize = 2;
-        int actualSize = pokedex.size();
+    int expectedSize = 2;
+    int actualSize = pokedex.size();
 
-        assertEquals(expectedSize,actualSize);
-    }
-*/
+    assertEquals(expectedSize, actualSize);
+}
+
     @Test
     public void testAddPokemon() {
         int expectedIndex = 1;

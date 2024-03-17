@@ -7,6 +7,35 @@ ILSEN
 [![codecov](https://codecov.io/gh/juniorabakar/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=UT2KBPTUOI)](https://codecov.io/gh/juniorabakar/ceri-m1-techniques-de-test)
 
 
+J'ai décidé de créer les implémentations des interfaces dans le même répertoires que les dites interfaces.
+## Implémentations
+## Pokedex
+La classe Pokedex agit comme un conteneur pour les Pokémon capturés, offrant des fonctionnalités pour ajouter, lister et accéder aux Pokémon. Nous avons opté pour une ArrayList<Pokemon> pour stocker les Pokémon en raison de sa rapidité d'accès et de sa simplicité d'utilisation. Les méthodes permettent d'obtenir une vue immuable de la liste des Pokémon pour prévenir les modifications non contrôlées.
+
+Voici les quelques choix techniques que j'ai décidé d'implémenter:
+-Utilisation de Collections.unmodifiableList pour renvoyer les listes de Pokémon, assurant l'immuabilité des collections exposées.
+-Implémentation des interfaces IPokemonMetadataProvider et IPokemonFactory directement dans Pokedex pour simplifier la structure et réduire le nombre de dépendances.
+
+## PokemonFactory
+La PokemonFactory fournit une méthode pour créer des instances de Pokemon. Chaque Pokémon est créé avec des paramètres spécifiques, permettant une grande flexibilité dans la génération de Pokémon avec différentes caractéristiques.
+
+Voici les quelques choix techniques que j'ai décidé d'implémenter:
+-Instantiation directe des objets Pokemon avec des valeurs passées en paramètre, offrant une méthode simple et directe pour créer des Pokémon.
+
+## PokemonMetadataProvider
+PokemonMetadataProvider est responsable de la fourniture de métadonnées pour les différents Pokémon. Les métadonnées sont stockées dans une Map<Integer, PokemonMetadata> où la clé est l'index du Pokémon.
+
+Voici les quelques choix techniques que j'ai décidé d'implémenter:
+-Utilisation d'une HashMap pour stocker les métadonnées, permettant un accès rapide aux données par index de Pokémon.
+-Initialisation manuelle des métadonnées pour des exemples de Pokémon, suggérant la possibilité d'étendre cette initialisation à partir d'une source de données externe ou d'un fichier.
+
+## PokemonTrainerFactory
+PokemonTrainerFactory crée des instances de PokemonTrainer, chacune associée à un Pokedex propre. La factory utilise un IPokedexFactory pour créer le Pokedex associé à chaque entraîneur.
+
+Voici les quelques choix techniques que j'ai décidé d'implémenter:
+-Injection de dépendance du IPokedexFactory via le constructeur de PokemonTrainerFactory, favorisant l'inversion de contrôle et rendant la création de PokemonTrainer plus flexible et testable.
+-Utilisation du pattern Factory pour encapsuler la création de PokemonTrainer et de son Pokedex, suivant le principe de séparation des préoccupations.
+
 ## Introduction
 
 
