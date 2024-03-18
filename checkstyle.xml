@@ -4,6 +4,9 @@
           "https://checkstyle.org/dtds/configuration_1_3.dtd">
 <module name="Checker">
     <property name="charset" value="UTF-8"/>
+<module name="LineLength">
+        <property name="max" value="100"/>
+    </module>
 
     <module name="TreeWalker">
         <module name="JavadocMethod"/>
@@ -20,10 +23,6 @@
         <module name="StaticVariableName"/>
         <module name="TypeName"/>
 
-        <!-- Personnalisation: Limitation de la longueur d'une ligne à 100 caractères -->
-        <module name="LineLength">
-            <property name="max" value="100"/>
-        </module>
 
         <!-- Vérification des accolades: elles doivent être présentes même pour les blocs d'une seule ligne -->
         <module name="NeedBraces"/>
