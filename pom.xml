@@ -23,7 +23,18 @@ http://maven.apache.org/maven-v4_0_0.xsd"
             <target>1.8</target>
          </configuration>
       </plugin>
-
+      <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-javadoc-plugin</artifactId>
+         <version>3.3.1</version>
+         <executions>
+             <execution>
+                 <goals>
+                     <goal>jar</goal> <!-- Génère un JAR de la Javadoc -->
+                 </goals>
+             </execution>
+         </executions>
+     </plugin>
        <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
