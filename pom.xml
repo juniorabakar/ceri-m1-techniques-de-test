@@ -53,6 +53,8 @@ http://maven.apache.org/maven-v4_0_0.xsd"
             <consoleOutput>true</consoleOutput>
             <failsOnError>true</failsOnError>
             <linkXRef>false</linkXRef>
+            <outputFile>${project.build.directory}/checkstyle-result.xml</outputFile>
+        <outputFormat>xml</outputFormat> <!-- Important pour mon script d'analyse -->
          </configuration>
          <executions>
             <execution>
