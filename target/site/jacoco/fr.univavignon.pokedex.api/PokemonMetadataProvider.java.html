@@ -7,18 +7,18 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
 
     private Map&lt;Integer, PokemonMetadata&gt; metadataMap;
 
-<span class="nc" id="L10">    public PokemonMetadataProvider() {</span>
-<span class="nc" id="L11">        metadataMap = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L10">    public PokemonMetadataProvider() {</span>
+<span class="fc" id="L11">        metadataMap = new HashMap&lt;&gt;();</span>
         // Par exemple:
-<span class="nc" id="L13">        metadataMap.put(0, new PokemonMetadata(0, &quot;Bulbizarre&quot;, 126, 126, 90));</span>
-<span class="nc" id="L14">    }</span>
+<span class="fc" id="L13">        metadataMap.put(0, new PokemonMetadata(0, &quot;Bulbizarre&quot;, 126, 126, 90));</span>
+<span class="fc" id="L14">    }</span>
 
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-<span class="nc bnc" id="L18" title="All 2 branches missed.">        if (!metadataMap.containsKey(index)) {</span>
-<span class="nc" id="L19">            throw new PokedexException(&quot;Metadata for Pokemon index &quot; + index + &quot; not found.&quot;);</span>
+<span class="fc bfc" id="L18" title="All 2 branches covered.">        if (!metadataMap.containsKey(index)) {</span>
+<span class="fc" id="L19">            throw new PokedexException(&quot;Metadata for Pokemon index &quot; + index + &quot; not found.&quot;);</span>
         }
-<span class="nc" id="L21">        return metadataMap.get(index);</span>
+<span class="fc" id="L21">        return metadataMap.get(index);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

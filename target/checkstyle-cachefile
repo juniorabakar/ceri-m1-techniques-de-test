@@ -1,4 +1,4 @@
-#Wed Apr 03 19:31:12 CEST 2024
+#Wed Apr 03 19:39:09 CEST 2024
 C\:\\Users\\Junio\\ceri-m1-techniques-de-test\\src\\main\\java\\fr\\univavignon\\pokedex\\api\\IPokedex.java=1707247112477
 C\:\\Users\\Junio\\ceri-m1-techniques-de-test\\src\\main\\java\\fr\\univavignon\\pokedex\\api\\IPokedexFactory.java=1707247112494
 C\:\\Users\\Junio\\ceri-m1-techniques-de-test\\src\\main\\java\\fr\\univavignon\\pokedex\\api\\IPokemonFactory.java=1707247112494
@@ -7,9 +7,9 @@ C\:\\Users\\Junio\\ceri-m1-techniques-de-test\\src\\main\\java\\fr\\univavignon\
 C\:\\Users\\Junio\\ceri-m1-techniques-de-test\\src\\main\\java\\fr\\univavignon\\pokedex\\api\\Pokedex.java=1711814839744
 C\:\\Users\\Junio\\ceri-m1-techniques-de-test\\src\\main\\java\\fr\\univavignon\\pokedex\\api\\PokedexException.java=1707247112494
 C\:\\Users\\Junio\\ceri-m1-techniques-de-test\\src\\main\\java\\fr\\univavignon\\pokedex\\api\\PokedexFactory.java=1710678434032
-C\:\\Users\\Junio\\ceri-m1-techniques-de-test\\src\\main\\java\\fr\\univavignon\\pokedex\\api\\Pokemon.java=1711815334410
+C\:\\Users\\Junio\\ceri-m1-techniques-de-test\\src\\main\\java\\fr\\univavignon\\pokedex\\api\\Pokemon.java=1712165567530
 C\:\\Users\\Junio\\ceri-m1-techniques-de-test\\src\\main\\java\\fr\\univavignon\\pokedex\\api\\PokemonComparators.java=1707247112494
-C\:\\Users\\Junio\\ceri-m1-techniques-de-test\\src\\main\\java\\fr\\univavignon\\pokedex\\api\\PokemonFactory.java=1710678542347
+C\:\\Users\\Junio\\ceri-m1-techniques-de-test\\src\\main\\java\\fr\\univavignon\\pokedex\\api\\PokemonFactory.java=1712165759228
 C\:\\Users\\Junio\\ceri-m1-techniques-de-test\\src\\main\\java\\fr\\univavignon\\pokedex\\api\\PokemonMetadata.java=1711814951334
 C\:\\Users\\Junio\\ceri-m1-techniques-de-test\\src\\main\\java\\fr\\univavignon\\pokedex\\api\\PokemonMetadataProvider.java=1710679143534
 C\:\\Users\\Junio\\ceri-m1-techniques-de-test\\src\\main\\java\\fr\\univavignon\\pokedex\\api\\PokemonTrainer.java=1711815406173
