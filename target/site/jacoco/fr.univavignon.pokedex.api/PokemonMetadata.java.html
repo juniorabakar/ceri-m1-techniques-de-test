@@ -7,70 +7,93 @@
  */
 public class PokemonMetadata {
 
-	/** Pokemon index. **/
-	private final int index;
+    /** Pokemon index. **/
+    private final int index;
 
-	/** Pokemon name. **/
-	private final String name;
+    /** Pokemon name. **/
+    private final String name;
 
-	/** Pokemon attack level. **/
-	private final int attack;
+    /** Pokemon attack level. **/
+    private final int attack;
 
-	/** Pokemon defense level. **/
-	private final int defense;
+    /** Pokemon defense level. **/
+    private final int defense;
 
-	/** Pokemon stamina level. **/
-	private final int stamina;
+    /** Pokemon stamina level. **/
+    private final int stamina;
 
-	/**
-	 * Default constructor.
-	 * 
-	 * @param index Pokemon index.
-	 * @param name Pokemon name.
-	 * @param attack Attack level.
-	 * @param defense Defense level.
-	 * @param stamina Stamina level.
-	 */
-<span class="fc" id="L34">	public PokemonMetadata(final int index, final String name, final int attack, final int defense, final int stamina) {</span>
-<span class="fc" id="L35">		this.index = index;</span>
-<span class="fc" id="L36">		this.name = name;</span>
-<span class="fc" id="L37">		this.attack = attack;</span>
-<span class="fc" id="L38">		this.defense = defense;</span>
-<span class="fc" id="L39">		this.stamina = stamina;</span>
-<span class="fc" id="L40">	}</span>
-<span class="fc" id="L41">	public PokemonMetadata() {</span>
-        // C'est quand même plus rapide avec un constructeur par défaut!
-<span class="fc" id="L43">        this.index = 0;</span>
-<span class="fc" id="L44">        this.name = &quot;Pikachu&quot;;</span>
-<span class="fc" id="L45">        this.attack = 0;</span>
-<span class="fc" id="L46">        this.defense = 0;</span>
-<span class="fc" id="L47">        this.stamina = 0;</span>
-<span class="fc" id="L48">    }</span>
+    /**
+     * Default constructor.
+     * 
+     * @param index Pokemon index.
+     * @param name Pokemon name.
+     * @param attack Attack level.
+     * @param defense Defense level.
+     * @param stamina Stamina level.
+     */
+<span class="fc" id="L34">    public PokemonMetadata(final int index, final String name, final int attack, final int defense, final int stamina) {</span>
+<span class="fc" id="L35">        this.index = index;</span>
+<span class="fc" id="L36">        this.name = name;</span>
+<span class="fc" id="L37">        this.attack = attack;</span>
+<span class="fc" id="L38">        this.defense = defense;</span>
+<span class="fc" id="L39">        this.stamina = stamina;</span>
+<span class="fc" id="L40">    }</span>
 
-	/** Index getter. **/
-	public int getIndex() {
-<span class="nc" id="L52">		return index;</span>
-	}
-	
-	/** Name getter.**/
-	public String getName() {
-<span class="fc" id="L57">		return name;</span>
-	}
+    /**
+     * Default constructor setting default values.
+     */
+<span class="fc" id="L45">    public PokemonMetadata() {</span>
+<span class="fc" id="L46">        this.index = 0;</span>
+<span class="fc" id="L47">        this.name = &quot;Pikachu&quot;;</span>
+<span class="fc" id="L48">        this.attack = 0;</span>
+<span class="fc" id="L49">        this.defense = 0;</span>
+<span class="fc" id="L50">        this.stamina = 0;</span>
+<span class="fc" id="L51">    }</span>
 
-	/** Attack level getter. **/
-	public int getAttack() {
-<span class="nc" id="L62">		return attack;</span>
-	}
+    /**
+     * Gets the Pokemon's index.
+     * 
+     * @return The index of the Pokemon.
+     */
+    public int getIndex() {
+<span class="fc" id="L59">        return index;</span>
+    }
 
-	/** Defense level getter. **/
-	public int getDefense() {
-<span class="nc" id="L67">		return defense;</span>
-	}
+    /**
+     * Gets the Pokemon's name.
+     * 
+     * @return The name of the Pokemon.
+     */
+    public String getName() {
+<span class="fc" id="L68">        return name;</span>
+    }
 
-	/** Stamina level getter. **/
-	public int getStamina() {
-<span class="nc" id="L72">		return stamina;</span>
-	}
+    /**
+     * Gets the Pokemon's attack level.
+     * 
+     * @return The attack level of the Pokemon.
+     */
+    public int getAttack() {
+<span class="fc" id="L77">        return attack;</span>
+    }
+
+    /**
+     * Gets the Pokemon's defense level.
+     * 
+     * @return The defense level of the Pokemon.
+     */
+    public int getDefense() {
+<span class="fc" id="L86">        return defense;</span>
+    }
+
+    /**
+     * Gets the Pokemon's stamina level.
+     * 
+     * @return The stamina level of the Pokemon.
+     */
+    public int getStamina() {
+<span class="fc" id="L95">        return stamina;</span>
+    }
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
