@@ -41,4 +41,23 @@ public class IPokemonTrainerFactoryTest {
         assertEquals("Le nom du dresseur devrait être 'Ash Ketchum'", name, trainer.getName());
         assertEquals("L'équipe du dresseur devrait être 'Team.VALOR'", team, trainer.getTeam());
     }
+    @Test
+    public void testGetPokedex() {
+        String name = "Ash Ketchum";
+        Team team = Team.VALOR;
+        IPokemonMetadataProvider metadataProvider = mock(IPokemonMetadataProvider.class);
+        IPokemonFactory pokemonFactory = mock(IPokemonFactory.class);
+    
+        IPokedex pokedex = mock(IPokedex.class);
+        when(pokedexFactory.createPokedex(metadataProvider, pokemonFactory)).thenReturn(pokedex);
+    
+        PokemonTrainer expectedTrainer = new PokemonTrainer(name, team, pokedex);
+        when(trainerFactory.createTrainer(name, team, pokedexFactory)).thenReturn(expectedTrainer);
+    
+        PokemonTrainer trainer = trainerFactory.createTrainer(name, team, pokedexFactory);
+    
+        assertNotNull("Le pokedex du dresseur ne devrait pas être nul", trainer.getPokedex());
+        assertEquals("Le pokedex du dresseur devrait être celui qui a été simulé", pokedex, trainer.getPokedex());
+    }
+    
 }
