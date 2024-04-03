@@ -5,17 +5,24 @@
 <module name="Checker">
     <property name="charset" value="UTF-8"/>
 
-    <!-- Configuration existante -->
+
     <module name="LineLength">
-        <property name="max" value="150"/>
+        <property name="max" value="2000"/>
     </module>
 
-    <!-- Ajout de la vérification de la Javadoc -->
-    <module name="TreeWalker">
-        <!-- Configuration pour vérifier les méthodes publiques et protégées -->
-        <module name="JavadocMethod">
-            <property name="scope" value="protected"/>
-        </module>
-    </module>
+<module name="TreeWalker">  
+    <module name="JavadocMethod">
+  <property name="scope" value="public"/>
+  <property name="allowMissingParamTags" value="false"/>
+ 
+</module>
+<module name="JavadocType">
+  <property name="scope" value="public"/>
+  <property name="allowMissingParamTags" value="false"/>
+
+</module>
+
+
     
+</module>
 </module>

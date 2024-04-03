@@ -1,55 +1,57 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Pokedex.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">projectTP1</a> &gt; <a href="index.source.html" class="el_package">fr.univavignon.pokedex.api</a> &gt; <span class="el_source">Pokedex.java</span></div><h1>Pokedex.java</h1><pre class="source lang-java linenums">package fr.univavignon.pokedex.api;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Pokedex.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TP5</a> &gt; <a href="index.source.html" class="el_package">fr.univavignon.pokedex.api</a> &gt; <span class="el_source">Pokedex.java</span></div><h1>Pokedex.java</h1><pre class="source lang-java linenums">package fr.univavignon.pokedex.api;
 import java.util.Collections; 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-
-<span class="fc" id="L8">public class Pokedex implements IPokedex {</span>
-<span class="fc" id="L9">    private List&lt;Pokemon&gt; pokemons = new ArrayList&lt;&gt;();</span>
+/**
+ * Pokedex class that holds and manages a list of Pokemon.
+ */
+<span class="fc" id="L10">public class Pokedex implements IPokedex {</span>
+<span class="fc" id="L11">    private List&lt;Pokemon&gt; pokemons = new ArrayList&lt;&gt;();</span>
 
     @Override
     public int size() {
-<span class="fc" id="L13">        return pokemons.size();</span>
+<span class="fc" id="L15">        return pokemons.size();</span>
     }
 
     @Override
     public int addPokemon(Pokemon pokemon) {
-<span class="fc" id="L18">        pokemons.add(pokemon);</span>
-<span class="fc" id="L19">        return pokemons.indexOf(pokemon);</span>
+<span class="fc" id="L20">        pokemons.add(pokemon);</span>
+<span class="fc" id="L21">        return pokemons.indexOf(pokemon);</span>
     }
 
     @Override
     public Pokemon getPokemon(int id) throws PokedexException {
-<span class="pc bpc" id="L24" title="1 of 4 branches missed.">        if (id &lt; 0 || id &gt;= size()) {</span>
-<span class="fc" id="L25">            throw new PokedexException(&quot;ID invalide...&quot;);</span>
+<span class="pc bpc" id="L26" title="1 of 4 branches missed.">        if (id &lt; 0 || id &gt;= size()) {</span>
+<span class="fc" id="L27">            throw new PokedexException(&quot;ID invalide...&quot;);</span>
         }
-<span class="fc" id="L27">        return pokemons.get(id);</span>
+<span class="fc" id="L29">        return pokemons.get(id);</span>
     }
 
     @Override
     public List&lt;Pokemon&gt; getPokemons() {
-<span class="fc" id="L32">        return Collections.unmodifiableList(new ArrayList&lt;&gt;(pokemons));</span>
+<span class="fc" id="L34">        return Collections.unmodifiableList(new ArrayList&lt;&gt;(pokemons));</span>
     }
 
     @Override
     public List&lt;Pokemon&gt; getPokemons(Comparator&lt;Pokemon&gt; order) {
-<span class="fc" id="L37">        return pokemons.stream().sorted(order).collect(Collectors.toList());</span>
+<span class="fc" id="L39">        return pokemons.stream().sorted(order).collect(Collectors.toList());</span>
     }
 
     @Override
     public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
         // Ceci est une implémentation de base.
-<span class="fc" id="L43">        return new Pokemon(index, &quot;Pikachu&quot;, cp, hp, dust, candy, 0, 0, 0, 0);</span>
+<span class="fc" id="L45">        return new Pokemon(index, &quot;Pikachu&quot;, cp, hp, dust, candy, 0, 0, 0, 0);</span>
     }
 
     // Implémentation de IPokemonMetadataProvider
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-<span class="pc bpc" id="L49" title="1 of 4 branches missed.">        if (index &lt; 0 || index &gt;= 151) { // Supposons qu'il y ait 151 Pokémons comme dans la première génération!</span>
-<span class="fc" id="L50">            throw new PokedexException(&quot;Pokemon index non valide...&quot;);</span>
+<span class="pc bpc" id="L51" title="1 of 4 branches missed.">        if (index &lt; 0 || index &gt;= 151) { // Supposons qu'il y ait 151 Pokémons comme dans la première génération!</span>
+<span class="fc" id="L52">            throw new PokedexException(&quot;Pokemon index non valide...&quot;);</span>
         }
-<span class="fc" id="L52">        return new PokemonMetadata(index, &quot;Pikachu&quot;, 123, 123, 123);</span>
+<span class="fc" id="L54">        return new PokemonMetadata(index, &quot;Pikachu&quot;, 123, 123, 123);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

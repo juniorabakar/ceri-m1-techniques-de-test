@@ -1,5 +1,7 @@
 package fr.univavignon.pokedex.api;
-
+/**
+ * Factory class for creating instances of a Pokedex.
+ */
 public class PokedexFactory implements IPokedexFactory {
 
     @Override

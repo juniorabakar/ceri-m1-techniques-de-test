@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-
+/**
+ * Pokedex class that holds and manages a list of Pokemon.
+ */
 public class Pokedex implements IPokedex {
     private List<Pokemon> pokemons = new ArrayList<>();
 
