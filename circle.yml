@@ -21,32 +21,34 @@ jobs:
           paths:
             - target/site/apidocs
 
-  deploy:
-    docker:
-      - image: circleci/openjdk:8-jdk
-    working_directory: ~/repo
-    steps:
-      - attach_workspace:
-          at: ~/repo
-      - run:
-          name: Add GitHub to Known Hosts
-          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-      - run:
-          name: Deploiement du javadoc sur github-pages
-          command: |
-            set -e  # Stop on error
-            git config --global user.name "$GH_NAME"
-            git config --global user.email "$GH_EMAIL"
-            # Ensure the .git URL format for cloning
-            REPO_URL=$(echo $CIRCLE_REPOSITORY_URL | sed 's/https:\/\/\(.*\):\(.*\)@/https:\/\/\1\/\2.git/')
-            git clone $REPO_URL ~/git-ceri-m1-techniques-de-test
-            cd ~/git-ceri-m1-techniques-de-test
-            git checkout gh-pages || git checkout --orphan gh-pages
-            git rm -rf .
-            cp -r ~/repo/target/site/apidocs/* .
-            git add --all
-            git commit -m "Deploy Javadoc [skip ci]" || echo "No changes to commit"
-            git push origin gh-pages
+deploy:
+  docker:
+    - image: circleci/openjdk:8-jdk
+  working_directory: ~/repo
+  steps:
+    - attach_workspace:
+        at: ~/repo
+    - run:
+        name: Add GitHub to Known Hosts
+        command: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+    - run:
+        name: Deploiement du javadoc sur github-pages
+        command: |
+          set -e  # Stop on error
+          git config --global user.name "$GH_NAME"
+          git config --global user.email "$GH_EMAIL"
+          # Ensure the .git URL format for cloning
+          REPO_URL=$(echo $CIRCLE_REPOSITORY_URL | sed 's/https:\/\/\(.*\):\(.*\)@/https:\/\/\1\/\2.git/')
+          git clone $REPO_URL ~/git-ceri-m1-techniques-de-test
+          cd ~/git-ceri-m1-techniques-de-test
+          git checkout gh-pages || git checkout --orphan gh-pages
+          git rm -rf .
+          cp -r ~/repo/target/site/apidocs/* .
+          git add --all
+          git commit -m "Deploy Javadoc [skip ci]" || echo "No changes to commit"
+          git push origin gh-pages
 
 workflows:
   version: 2
