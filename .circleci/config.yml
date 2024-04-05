@@ -13,6 +13,7 @@ jobs:
       - run:
           name: Generation de ma javadoc
           command: mvn javadoc:javadoc
+
       - run:
           name: Verification du checkstyle
           command: mvn checkstyle:check
