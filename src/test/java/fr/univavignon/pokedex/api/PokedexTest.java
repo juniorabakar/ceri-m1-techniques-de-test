@@ -3,10 +3,6 @@ package fr.univavignon.pokedex.api;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.Test;
 import java.util.Comparator;
 import java.util.List;
 
@@ -24,7 +20,25 @@ public class PokedexTest {
         pokedex.addPokemon(pikachu);
         pokedex.addPokemon(bulbasaur);
     }
-
+    @Test(expected = PokedexException.class)
+    public void testGetPokemonInvalidIdNegative() throws PokedexException {
+        pokedex.getPokemon(-1);
+    }
+    
+    @Test(expected = PokedexException.class)
+    public void testGetPokemonInvalidIdGreaterThanSize() throws PokedexException {
+        pokedex.getPokemon(pokedex.size());
+    }
+    
+    @Test(expected = PokedexException.class)
+    public void testGetPokemonMetadataInvalidIndexNegative() throws PokedexException {
+        pokedex.getPokemonMetadata(-1);
+    }
+    
+    @Test(expected = PokedexException.class)
+    public void testGetPokemonMetadataInvalidIndexGreaterThanLimit() throws PokedexException {
+        pokedex.getPokemonMetadata(151);
+    }
     @Test
     public void testSize() {
         assertEquals(2, pokedex.size());

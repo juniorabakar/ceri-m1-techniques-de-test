@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 
     @Override
     public Pokemon getPokemon(int id) throws PokedexException {
-<span class="pc bpc" id="L26" title="1 of 4 branches missed.">        if (id &lt; 0 || id &gt;= size()) {</span>
+<span class="fc bfc" id="L26" title="All 4 branches covered.">        if (id &lt; 0 || id &gt;= size()) {</span>
 <span class="fc" id="L27">            throw new PokedexException(&quot;ID invalide...&quot;);</span>
         }
 <span class="fc" id="L29">        return pokemons.get(id);</span>
@@ -48,7 +48,7 @@ import java.util.stream.Collectors;
     // Implémentation de IPokemonMetadataProvider
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-<span class="pc bpc" id="L51" title="1 of 4 branches missed.">        if (index &lt; 0 || index &gt;= 151) { // Supposons qu'il y ait 151 Pokémons comme dans la première génération!</span>
+<span class="fc bfc" id="L51" title="All 4 branches covered.">        if (index &lt; 0 || index &gt;= 151) { // Supposons qu'il y ait 151 Pokémons comme dans la première génération!</span>
 <span class="fc" id="L52">            throw new PokedexException(&quot;Pokemon index non valide...&quot;);</span>
         }
 <span class="fc" id="L54">        return new PokemonMetadata(index, &quot;Pikachu&quot;, 123, 123, 123);</span>
