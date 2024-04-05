@@ -29,6 +29,7 @@ jobs:
           command: |
             git config user.name "$GH_NAME"
             git config user.email "$GH_EMAIL"
+            
             git clone $CIRCLE_REPOSITORY_URL git-repo
             cd git-repo
             git checkout gh-pages || git checkout --orphan gh-pages
