@@ -23,7 +23,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/openjdk:8-jdk
+      - image: cimg/openjdk:21.0.2-node
     working_directory: ~/ceri-m1-techniques-de-test
     steps:
       - attach_workspace:
