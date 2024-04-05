@@ -21,7 +21,7 @@ jobs:
           paths:
             - target/site/apidocs
 
-deploy:
+ deploy:
   docker:
     - image: circleci/openjdk:8-jdk
   working_directory: ~/repo
@@ -49,6 +49,7 @@ deploy:
           git add --all
           git commit -m "Deploy Javadoc [skip ci]" || echo "No changes to commit"
           git push origin gh-pages
+
 
 workflows:
   version: 2
