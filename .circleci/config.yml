@@ -29,6 +29,13 @@ jobs:
       - attach_workspace:
           at: ~/ceri-m1-techniques-de-test
       - run:
+          name: Install Node.js
+          command: |
+            curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+            node --version
+            npm --version    
+      - run:
           name: Install and configure dependencies
           command: |
             sudo npm install -g gh-pages
