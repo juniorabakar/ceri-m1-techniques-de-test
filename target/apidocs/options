@@ -1,0 +1,24 @@
+-classpath
+'C:/Users/Junio/.m2/repository/org/apache/commons/commons-collections4/4.0/commons-collections4-4.0.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'C:/Users/Junio/ceri-m1-techniques-de-test/src/main/java;C:/Users/Junio/ceri-m1-techniques-de-test/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/Junio/ceri-m1-techniques-de-test/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'projectTP1 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' 'C:/Users/Junio/ceri-m1-techniques-de-test/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'projectTP1 1.0-SNAPSHOT API'
