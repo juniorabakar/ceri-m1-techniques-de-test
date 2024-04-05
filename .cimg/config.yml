@@ -16,6 +16,7 @@ jobs:
       - run:
           name: Coverage to Codecov
           command: bash <(curl -s https://codecov.io/bash) -v
+          token: CODECOV_TOKEN=acea2cbf-91aa-42ef-abb5-0cedfcb83f5c
 
       - persist_to_workspace:
           root: ~/ceri-m1-techniques-de-test
