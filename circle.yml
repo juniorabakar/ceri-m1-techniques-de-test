@@ -13,21 +13,24 @@ jobs:
       - run:
           name: Generation de ma javadoc
           command: mvn javadoc:javadoc
+      - run:
+          name: Verification du checkstyle
+          command: mvn checkstyle:check
       - persist_to_workspace:
           root: ~/ceri-m1-techniques-de-test
           paths:
             - target/site/apidocs
-      - run:
-          name:Verification du checkstyle
-          command: mvn checkstyle:check
 
   deploy:
     docker:
       - image: circleci/openjdk:8-jdk
-    working_directory: ~/ceri-m1-techniques-de-test
+    working_directory: ~/repo
     steps:
       - attach_workspace:
-          at: ~/ceri-m1-techniques-de-test
+          at: ~/repo
+      - run:
+          name: Add GitHub to Known Hosts
+          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
       - run:
           name: Deploiement du javadoc sur github-pages
           command: |
@@ -36,8 +39,8 @@ jobs:
             git config --global user.email "$GH_EMAIL"
             # Ensure the .git URL format for cloning
             REPO_URL=$(echo $CIRCLE_REPOSITORY_URL | sed 's/https:\/\/\(.*\):\(.*\)@/https:\/\/\1\/\2.git/')
-            git clone $REPO_URL ~/git-repo
-            cd ~/git-repo
+            git clone $REPO_URL ~/git-ceri-m1-techniques-de-test
+            cd ~/git-ceri-m1-techniques-de-test
             git checkout gh-pages || git checkout --orphan gh-pages
             git rm -rf .
             cp -r ~/repo/target/site/apidocs/* .
