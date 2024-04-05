@@ -20,7 +20,7 @@ jobs:
             source $BASH_ENV
             bash <(curl -s https://codecov.io/bash) -v
       - persist_to_workspace:
-      
+
           root: ~/ceri-m1-techniques-de-test
           paths:
             - target/site/apidocs
@@ -30,3 +30,11 @@ workflows:
   build:
     jobs:
       - build
+  upload-to-codecov:
+    jobs:
+      - checkout 
+      - codecov/upload
+      - persist_to_workspace:
+          root: ~/ceri-m1-techniques-de-test
+          paths:
+            - target/site/apidocs
