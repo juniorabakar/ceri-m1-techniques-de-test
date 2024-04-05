@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-  codecov: codecov/codecov@4.0.1
-
 jobs:
   build:
     docker:
@@ -16,16 +13,12 @@ jobs:
       - run:
           name: Generate Javadoc
           command: mvn javadoc:javadoc
-      - codecov/upload:
-          file: "target/site/jacoco/jacoco.xml"
-      - persist_to_workspace:
-          root: ~/ceri-m1-techniques-de-test
-          paths:
-            - target/site/apidocs
+      - run:
+          name: Upload to Codecov
+          command: bash <(curl -s https://codecov.io/bash) -t ${CODECOV_TOKEN}
 
 workflows:
   version: 2
-  build-and-upload-to-codecov:
+  build:
     jobs:
       - build
-      
