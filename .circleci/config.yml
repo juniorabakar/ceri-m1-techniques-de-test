@@ -30,11 +30,6 @@ jobs:
       - attach_workspace:
           at: ~/ceri-m1-techniques-de-test
       - run:
-          name: Add GitHub to Known Hosts
-          command: |
-            mkdir -p ~/.ssh
-            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-      - run:
           name: Deploiement du javadoc sur github-pages
           command: |
             set -e  # Stop on error
