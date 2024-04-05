@@ -29,6 +29,12 @@ jobs:
       - attach_workspace:
           at: ~/ceri-m1-techniques-de-test
       - run:
+          name: Start SSH agent
+          command: eval $(ssh-agent -s)
+      - add_ssh_keys:
+          fingerprints:
+            - "SHA256:MGbpqLdz3jJ+9cJC4XR1HRyrOa+GkG+KOT/39xof4OA"  
+      - run:
           name: Add GitHub to Known Hosts
           command: |
             mkdir -p ~/.ssh
@@ -39,9 +45,8 @@ jobs:
             set -e  # Stop on error
             git config --global user.name "$GH_NAME"
             git config --global user.email "$GH_EMAIL"
-            # Ensure the .git URL format for cloning
             REPO_URL=$(echo $CIRCLE_REPOSITORY_URL | sed 's/https:\/\/\(.*\):\(.*\)@/https:\/\/\1\/\2.git/')
-            git clone $CIRCLE_REPOSITORY_URL ~/git-ceri-m1-techniques-de-test
+            git clone $REPO_URL ~/git-ceri-m1-techniques-de-test
             cd ~/git-ceri-m1-techniques-de-test
             git checkout gh-pages || git checkout --orphan gh-pages
             git rm -rf .
