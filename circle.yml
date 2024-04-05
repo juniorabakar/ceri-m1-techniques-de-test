@@ -13,21 +13,36 @@ jobs:
       - run:
           name: Generate Javadoc
           command: mvn javadoc:javadoc
-      - run:
-          name: Coverage to Codecov
-          command: |
-            echo 'export CODECOV_TOKEN=${CODECOV_TOKEN}' >> $BASH_ENV
-            source $BASH_ENV
-            bash <(curl -s https://codecov.io/bash) -v
       - persist_to_workspace:
-
           root: ~/ceri-m1-techniques-de-test
           paths:
             - target/site/apidocs
+          
+  deploy:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - run:
+          name: Deploy Javadoc to GitHub Pages
+          command: |
+            git config user.name "$GH_NAME"
+            git config user.email "$GH_EMAIL"
+            git clone $CIRCLE_REPOSITORY_URL git-repo
+            cd git-repo
+            git checkout gh-pages || git checkout --orphan gh-pages
+            git rm -rf .
+            cp -r /tmp/workspace/target/site/apidocs/* .
+            git add .
+            git commit -m "Deploy Javadoc [skip ci]"
+            git push origin gh-pages
 
 workflows:
   version: 2
-  build:
+  build_and_deploy:
     jobs:
       - build
-  
+      - deploy:
+          requires:
+            - build
