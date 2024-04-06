@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:8-jdk
+      - image: cimg/openjdk:21.0.2
     working_directory: ~/ceri-m1-techniques-de-test
     steps:
       - checkout
@@ -50,7 +50,7 @@ jobs:
             gh-pages --dotfiles --message "[skip ci] Updates" --dist ~/ceri-m1-techniques-de-test/target/site/apidocs
 
 workflows:
-  version: 2
+  
   build_and_deploy:
     jobs:
       - build
