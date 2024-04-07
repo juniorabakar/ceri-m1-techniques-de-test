@@ -33,6 +33,8 @@ jobs:
       - run:
           name: Deploiement de la documentation
           command: |
+            git config user.name "juniorabakar"
+            git config user.email "abakarjunior077@gmail.com"
             gh-pages --dist target/site/apidocs --repo https://github.com/juniorabakar/ceri-m1-techniques-de-test.git
 
 workflows:
