@@ -3,6 +3,8 @@ package fr.univavignon.pokedex.api;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+
+import fr.univavignon.pokedex.imp.RocketPokemonFactory;
 public class RocketPokemonFactoryTest {
 
     private RocketPokemonFactory factory;
@@ -11,7 +13,18 @@ public class RocketPokemonFactoryTest {
     public void setUp() {
         factory = new RocketPokemonFactory();
     }
-
+    @Test
+    public void testCreatePokemonForUnmappedIndex() {
+        int unmappedIndex = 2; // Cet indice n'est volontairement pas sur la map
+        int cp = 0; 
+        int hp = 0; 
+        int dust = 0; 
+        int candy = 0; 
+        Pokemon pokemon = factory.createPokemon(unmappedIndex, cp, hp, dust, candy);
+        assertNotNull(pokemon);
+        assertEquals("MISSINGNO", pokemon.getName()); 
+    }
+    
     @Test
     public void testCreatePokemonValidIndex() {
         int index = 1; 
