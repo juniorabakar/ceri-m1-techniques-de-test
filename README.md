@@ -5,7 +5,7 @@ ILSEN
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/juniorabakar/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/juniorabakar/ceri-m1-techniques-de-test/tree/master)
 [![codecov](https://codecov.io/gh/juniorabakar/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=UT2KBPTUOI)](https://codecov.io/gh/juniorabakar/ceri-m1-techniques-de-test)
-![Checkstyle](https://img.shields.io/endpoint?url=https://github.com/juniorabakar/ceri-m1-techniques-de-test/blob/master/checkstyle_resultats.json)
+![Checkstyle](https://img.shields.io/endpoint?url=https://github.com/juniorabakar/ceri-m1-techniques-de-test/blob/master/target/checkstyle-result.xml)
 N'oubliez pas d'exécuter le script à chaque commit et pull alors
 
 J'ai décidé de créer les implémentations des interfaces dans le même répertoires que les dites interfaces.
