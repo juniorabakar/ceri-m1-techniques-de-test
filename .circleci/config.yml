@@ -45,7 +45,7 @@ jobs:
       - run:
           name: Deploiement de la documentation
           command: |
-             gh-pages --dist ~/ceri-m1-techniques-de-test/target/site/apidocs
+            gh-pages --dist target/site/apidocs --repo https://github.com/juniorabakar/ceri-m1-techniques-de-test.git
 
 workflows:
   
