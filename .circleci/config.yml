@@ -29,10 +29,6 @@ jobs:
       - attach_workspace:
           at: ~/ceri-m1-techniques-de-test
       - run:
-          name: Deplacement vers le bon dossier
-          command: |
-            cd ~/ceri-m1-techniques-de-test
-      - run:
           name: Installation et dependances
           command: |            
             sudo npm install -g npm@10.5.1
