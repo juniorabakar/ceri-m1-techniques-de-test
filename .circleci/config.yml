@@ -24,7 +24,7 @@ jobs:
   deploy:
     docker:
       - image: cimg/openjdk:21.0.2-node
-    working_directory: ~/ceri-m1-techniques-de-test
+    working_directory: ~/ceri-m1-techniques-de-test/target
     steps:
       - attach_workspace:
           at: ~/ceri-m1-techniques-de-test
