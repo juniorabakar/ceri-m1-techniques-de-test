@@ -24,13 +24,17 @@ jobs:
   deploy:
     docker:
       - image: cimg/openjdk:21.0.2-node
-    working_directory: ~/ceri-m1-techniques-de-test/target
+    working_directory: ~/ceri-m1-techniques-de-test
     steps:
       - attach_workspace:
           at: ~/ceri-m1-techniques-de-test
       - run:
-          name: Installation et dependances
+          name: Deplacement vers le bon dossier
           command: |
+            cd ~/ceri-m1-techniques-de-test
+      - run:
+          name: Installation et dependances
+          command: |            
             sudo npm install -g npm@10.5.1
             sudo npm install -g --silent gh-pages@6.1.1
             pwd
@@ -41,11 +45,10 @@ jobs:
       - run:
           name: Deploiement de la documentation
           command: |
-            git config user.email "abakarjunior077@gmail.com"
-            git config user.name "juniorabakar"
-            gh-pages --dist target/site/apidocs
+             gh-pages --dist ~/ceri-m1-techniques-de-test/target/site/apidocs
 
 workflows:
+  
   build_and_deploy:
     jobs:
       - build
