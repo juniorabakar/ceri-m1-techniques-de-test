@@ -21,42 +21,7 @@ jobs:
           paths:
             - target/site/apidocs
 
-  deploy:
-    docker:
-      - image: cimg/openjdk:21.0.2-node
-    working_directory: ~/ceri-m1-techniques-de-test
-    steps:
-      - attach_workspace:
-          at: ~/ceri-m1-techniques-de-test
-      - run:
-          name: Install Node.js
-          command: |
-            cd ~/ceri-m1-techniques-de-test
-            curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-            sudo apt-get install -y nodejs
-            node --version
-            npm --version
-
-      - run:
-          name: Install and configure dependencies
-          command: |
-            sudo npm install -g npm@10.5.1
-            sudo npm install -g gh-pages@2.0.1
-            git config user.email "abakarjunior077@gmail.com"
-            git config user.name "juniorabakar"
-      - add_ssh_keys:
-          fingerprints:
-            - "SHA256:MGbpqLdz3jJ+9cJC4XR1HRyrOa+GkG+KOT/39xof4OA"  
-      - run:
-          name: Deploy docs to gh-pages branch
-          command: |
-             gh-pages --dist ~/ceri-m1-techniques-de-test/target/site/apidocs
-
 workflows:
-  
   build_and_deploy:
     jobs:
       - build
-      - deploy:
-          requires:
-            - build
