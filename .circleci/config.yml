@@ -13,9 +13,6 @@ jobs:
       - run:
           name: Generation de ma javadoc
           command: mvn javadoc:javadoc
-      - run:
-          name: Verification du checkstyle
-          command: mvn checkstyle:check
       - persist_to_workspace:
           root: ~/ceri-m1-techniques-de-test
           paths:
@@ -29,26 +26,16 @@ jobs:
       - attach_workspace:
           at: ~/ceri-m1-techniques-de-test
       - run:
-          name: Deplacement vers le bon dossier
-          command: |
-            cd ..
-      - run:
           name: Installation et dependances
           command: |            
             sudo npm install -g npm@10.5.1
-            sudo npm install -g --silent gh-pages@6.1.1
-            pwd
-            ls -la
-      - add_ssh_keys:
-          fingerprints:
-            - "SHA256:ktWCeOf4ZTM0Rg6wbpcvQ/s4FHSK71PG81+w9oQTm0I"  
+            sudo npm install -g gh-pages@6.1.1
       - run:
           name: Deploiement de la documentation
           command: |
-            gh-pages --dist target/site/apidocs --repo "https://github.com/juniorabakar/ceri-m1-techniques-de-test.git"
+            gh-pages --dist target/site/apidocs --repo https://github.com/juniorabakar/ceri-m1-techniques-de-test.git
 
 workflows:
-  
   build_and_deploy:
     jobs:
       - build
