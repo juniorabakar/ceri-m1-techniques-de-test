@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import fr.univavignon.pokedex.imp.RocketPokemonFactory;
+import fr.univavignon.pokedex.api.imp.RocketPokemonFactory;
 public class RocketPokemonFactoryTest {
 
     private RocketPokemonFactory factory;
