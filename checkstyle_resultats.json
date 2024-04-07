@@ -1,7 +1,1 @@
-{
-    "schemaVersion": 1,
-    "label": "checkstyle",
-    "message": "success",
-    "color": "brightgreen"
-  }
-  
+{"status": "Success", "errors": 0}
