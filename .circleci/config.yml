@@ -36,9 +36,15 @@ jobs:
             sudo npm install -g --silent gh-pages@6.1.1
             git config user.email "abakarjunior077@gmail.com"
             git config user.name "juniorabakar"
+       - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --dist target/site/apidocs
       - add_ssh_keys:
           fingerprints:
             - "SHA256:ktWCeOf4ZTM0Rg6wbpcvQ/s4FHSK71PG81+w9oQTm0I"
+      - run:
+          name: Deploiement de la documentation sur gh-pages
+          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist target/site/apidocs
 workflows:
   build_and_deploy:
     jobs:
