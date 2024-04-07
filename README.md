@@ -5,7 +5,7 @@ ILSEN
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/juniorabakar/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/juniorabakar/ceri-m1-techniques-de-test/tree/master)
 [![codecov](https://codecov.io/gh/juniorabakar/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=UT2KBPTUOI)](https://codecov.io/gh/juniorabakar/ceri-m1-techniques-de-test)
-![Checkstyle](https://img.shields.io/badge/dynamic/json?url=https://github.com/juniorabakar/ceri-m1-techniques-de-test/tree/master/checkstyle_resultats.json&query=$.status)
+![Checkstyle](https://img.shields.io/badge/dynamic/json?label=checkstyle&query=$.errors&suffix=_errors&url=https://raw.githubusercontent.com/juniorabakar/ceri-m1-techniques-de-test/master/checkstyle_resultats.json&color=success)
 
 J'ai décidé de créer les implémentations des interfaces dans le même répertoires que les dites interfaces.
 ## Implémentations
