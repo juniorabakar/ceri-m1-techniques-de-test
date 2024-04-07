@@ -29,15 +29,11 @@ jobs:
       - attach_workspace:
           at: ~/ceri-m1-techniques-de-test
       - run:
-          name: Install Node.js
+          name: Deplacement vers le bon dossier
           command: |
             cd ~/ceri-m1-techniques-de-test
-            sudo apt-get install -y nodejs
-            node --version
-            npm --version
-
       - run:
-          name: Install and configure dependencies
+          name: Installation et dependances
           command: |
             sudo npm install -g npm@10.5.1
             sudo npm install -g --silent gh-pages@6.1.1
@@ -48,7 +44,7 @@ jobs:
           fingerprints:
             - "SHA256:ktWCeOf4ZTM0Rg6wbpcvQ/s4FHSK71PG81+w9oQTm0I"  
       - run:
-          name: Deploy docs to gh-pages branch
+          name: Deploiement de la documentation
           command: |
              gh-pages --dist ~/ceri-m1-techniques-de-test/target/site/apidocs
 
