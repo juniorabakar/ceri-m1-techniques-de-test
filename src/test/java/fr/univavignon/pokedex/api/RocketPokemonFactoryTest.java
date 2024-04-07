@@ -3,6 +3,8 @@ package fr.univavignon.pokedex.api;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+
+import fr.univavignon.pokedex.imp.RocketPokemonFactory;
 public class RocketPokemonFactoryTest {
 
     private RocketPokemonFactory factory;
