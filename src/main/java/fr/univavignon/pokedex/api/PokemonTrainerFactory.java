@@ -2,6 +2,7 @@ package fr.univavignon.pokedex.api;
 
 public class PokemonTrainerFactory implements IPokemonTrainerFactory {
 
+    @SuppressWarnings("unused")
     private IPokedexFactory pokedexFactory;
 
     public PokemonTrainerFactory(IPokedexFactory pokedexFactory) {
