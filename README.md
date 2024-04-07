@@ -6,10 +6,9 @@ ILSEN classique
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/juniorabakar/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/juniorabakar/ceri-m1-techniques-de-test/tree/master)
 [![codecov](https://codecov.io/gh/juniorabakar/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=UT2KBPTUOI)](https://codecov.io/gh/juniorabakar/ceri-m1-techniques-de-test)
 ![Checkstyle](https://img.shields.io/badge/dynamic/json?label=checkstyle&query=$.errors&suffix=_errors&url=https://raw.githubusercontent.com/juniorabakar/ceri-m1-techniques-de-test/master/checkstyle_resultats.json&color=success)
-[![Javadoc](https://img.shields.io/badge/documentation-available-brightgreen.svg)](http://127.0.0.1:5500/target/apidocs/fr/univavignon/pokedex/api/package-summary.html)
+[![Javadoc](https://img.shields.io/badge/Javadoc-available-brightgreen.svg)](http://127.0.0.1:5500/target/apidocs/fr/univavignon/pokedex/api/package-summary.html)
 
 
-J'ai décidé de créer les implémentations des interfaces dans le même répertoires que les dites interfaces.
 ## Implémentations
 ## Pokedex
 La classe Pokedex agit comme un conteneur pour les Pokémon capturés, offrant des fonctionnalités pour ajouter, lister et accéder aux Pokémon. Nous avons opté pour une ArrayList<Pokemon> pour stocker les Pokémon en raison de sa rapidité d'accès et de sa simplicité d'utilisation. Les méthodes permettent d'obtenir une vue immuable de la liste des Pokémon pour prévenir les modifications non contrôlées.

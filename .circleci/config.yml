@@ -1,5 +1,7 @@
 version: 2.1
 
+orbs:
+  codecov: codecov/codecov@1.1.0
 
 jobs:
   build:
@@ -12,12 +14,17 @@ jobs:
           name: Tests unitaires
           command: mvn test
       - run:
+          name: Generate code coverage report
+          command: mvn jacoco:report
+      - run:
           name: Generation de ma javadoc
           command: mvn javadoc:javadoc
       - persist_to_workspace:
           root: ~/ceri-m1-techniques-de-test
           paths:
             - target/site/apidocs
+      - codecov/upload:
+          file: target/site/jacoco/jacoco.xml 
 
 workflows:
   build:
