@@ -31,8 +31,7 @@ jobs:
       - run:
           name: Install Node.js
           command: |
-            cd ~/ceri-m1-techniques-de-test/target
-            curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+            cd ~/ceri-m1-techniques-de-test
             sudo apt-get install -y nodejs
             node --version
             npm --version
@@ -41,7 +40,7 @@ jobs:
           name: Install and configure dependencies
           command: |
             sudo npm install -g npm@10.5.1
-            sudo npm install -g gh-pages@2.0.1
+            sudo npm install -g --silent gh-pages@6.1.1
             npm fund
             git config user.email "abakarjunior077@gmail.com"
             git config user.name "juniorabakar"
