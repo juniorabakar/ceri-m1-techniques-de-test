@@ -20,9 +20,7 @@ jobs:
       run: |
         mvn -B checkstyle:checkstyle
         mvn -B javadoc:javadoc
-        git config --global user.name 'juniorabakar'
-        git config --global user.email 'abakarjunior077@gmail.com'
-        git commit -m "Commit"
+        
 
     - name: Cloner la branche gh-pages pour le déploiement
       run: |
