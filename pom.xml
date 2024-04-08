@@ -71,6 +71,7 @@ http://maven.apache.org/maven-v4_0_0.xsd"
         <outputFormat>xml</outputFormat> <!-- Important pour mon script d'analyse -->
          </configuration>
          <executions>
+            
             <execution>
                <phase>validate</phase>
                <goals>
