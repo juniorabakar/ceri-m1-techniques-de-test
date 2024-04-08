@@ -1,4 +1,3 @@
-theme: jekyll-theme-hacker
 version: 2.1
 
 orbs:
@@ -16,7 +15,12 @@ jobs:
           command: mvn test
       - run:
           name: Generate code coverage report
-          command: mvn jacoco:report
+          command: |
+            mvn jacoco:report
+            echo 'export CODECOV_TOKEN="${CODECOV_TOKEN}"' >> $BASH_ENV
+            source $BASH_ENV
+            bash <(curl -s https://codecov.io/bash)
+
       - run:
           name: Generation de ma javadoc
           command: mvn javadoc:javadoc
@@ -24,13 +28,6 @@ jobs:
           root: ~/ceri-m1-techniques-de-test
           paths:
             - target/site/apidocs
-      - run:
-          name: Setup Codecov environment variable
-          command: echo 'export CODECOV_TOKEN="${CODECOV_TOKEN}"' >> $BASH_ENV
-          source $BASH_ENV
-      - run:
-          name: Upload to Codecov
-          command: bash <(curl -s https://codecov.io/bash)
       - codecov/upload:
           file: target/site/jacoco/jacoco.xml 
 
