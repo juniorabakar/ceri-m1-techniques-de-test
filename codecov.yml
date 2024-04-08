@@ -1,5 +1,6 @@
 codecov:
   require_ci_to_pass: true
+  disable_default_path_fixes: true
 comment:
   behavior: default
   layout: header, diff, tree, footer
@@ -29,3 +30,9 @@ parsers:
       macro: false
       method: false
 slack_app: true
+fixes:
+  - "/home/circleci/::"
+  - "before/::after/"
+  - "before/test-*::after/"
+  - "::after/"        
+  - "before/::"        
