@@ -1,0 +1,35 @@
+codecov:
+  require_ci_to_pass: true
+  disable_default_path_fixes: true
+comment:
+  behavior: default
+  layout: header, diff, tree, footer
+  require_changes: false
+  show_carryforward_flags: false
+coverage:
+  precision: 2
+  round: down
+  status:
+    changes: false
+    default_rules:
+      flag_coverage_not_uploaded_behavior: include
+    patch: true
+    project: true
+github_checks:
+  annotations: true
+ignore:
+- (?s:src/tests/[^\/]*)\Z
+parsers:
+  gcov:
+    branch_detection:
+      conditional: true
+      loop: true
+      macro: false
+      method: false
+slack_app: true
+fixes:
+  - "/home/circleci/::"
+  - "before/::after/"
+  - "before/test-*::after/"
+  - "::after/"        
+  - "before/::"        
