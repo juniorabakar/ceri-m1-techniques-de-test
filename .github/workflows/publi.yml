@@ -8,6 +8,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: 'master'
 
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
@@ -19,9 +21,14 @@ jobs:
         mvn -B checkstyle:checkstyle
         mvn -B javadoc:javadoc
 
-    - name: Deploiement vers GitHub Pages
+    - name: Cloner la branche gh-pages pour le déploiement
       run: |
-        git checkout -b gh-pages
-        git add -f target/site/
-        git commit -m "Deploy reports to GitHub Pages"
-        git push -f origin gh-pages
+        git config --global user.name 'juniorabakar'
+        git config --global user.email 'abakarjunior077@gmail.com'
+        git fetch --no-tags --prune --depth=1 origin +refs/heads/gh-pages:refs/remotes/origin/gh-pages
+        git checkout gh-pages
+        git rm -r '*'
+        cp -r ../ceri-m1-techniques-de-test/target/site/* .
+        git add .
+        git commit -m "Deploy updated reports to GitHub Pages"
+        git push origin gh-pages
