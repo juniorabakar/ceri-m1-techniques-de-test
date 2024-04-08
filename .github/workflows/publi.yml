@@ -20,7 +20,10 @@ jobs:
       run: |
         mvn -B checkstyle:checkstyle
         mvn -B javadoc:javadoc
-        
+        git config --global user.name 'juniorabakar'
+        git config --global user.email 'abakarjunior077@gmail.com'
+        git stash push -m "Sauvegarde temporaire des modifications"
+
 
     - name: Cloner la branche gh-pages pour le déploiement
       run: |
