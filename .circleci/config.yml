@@ -8,6 +8,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Analyse Checkstyle
+          command: mvn checkstyle:check
+      - run:
           name: Tests unitaires et rapport de couverture
           command: mvn clean test jacoco:report
       - run: 
