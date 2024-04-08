@@ -20,6 +20,7 @@ jobs:
       run: |
         mvn -B checkstyle:checkstyle
         mvn -B javadoc:javadoc
+        git commit -m "Commit"
 
     - name: Cloner la branche gh-pages pour le déploiement
       run: |
