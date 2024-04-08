@@ -11,6 +11,5 @@ public class PokedexFactoryTest {
         IPokedex pokedex = factory.createPokedex(new PokemonMetadataProvider(), new PokemonFactory());
 
         assertNotNull(pokedex);
-        // Test the pokedex for different methods as needed.
     }
 }

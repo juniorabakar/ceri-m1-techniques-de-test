@@ -28,11 +28,11 @@ public interface IPokedex extends IPokemonMetadataProvider, IPokemonFactory {
 	int addPokemon(Pokemon pokemon);
 	
 	/**
-	 * Locates the pokemon identified by the given {@code id}.
+	 * Localise le pokemon identifié par son {@code id}.
 	 * 
-	 * @param id Unique pokedex relative identifier.
-	 * @return Pokemon denoted by the given identifier.
-	 * @throws PokedexException If the given {@code index} is not valid.
+	 * @param id Identifiant unique au pokédex
+	 * @return le pokemon avec l'id donné
+	 * @throws PokedexException Si l'{@code index} n'est pas valide
 	 */
 	Pokemon getPokemon(int id) throws PokedexException;
 	
