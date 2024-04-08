@@ -28,7 +28,7 @@ jobs:
         git fetch --no-tags --prune --depth=1 origin +refs/heads/gh-pages:refs/remotes/origin/gh-pages
         git checkout gh-pages
         git rm -r '*'
-        cp -r ../ceri-m1-techniques-de-test/target/site/* .
+        cp -r target/site/* .
         git add .
         git commit -m "Deploy updated reports to GitHub Pages"
         git push origin gh-pages
