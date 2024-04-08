@@ -10,7 +10,7 @@ Le plus gros problème rencontré était celui de la configuration des environne
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/juniorabakar/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/juniorabakar/ceri-m1-techniques-de-test/tree/master)
 [![codecov](https://codecov.io/gh/juniorabakar/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=UT2KBPTUOI)](https://codecov.io/gh/juniorabakar/ceri-m1-techniques-de-test)
 ![Checkstyle](https://img.shields.io/badge/dynamic/json?label=checkstyle&query=$.errors&suffix=_errors&url=https://raw.githubusercontent.com/juniorabakar/ceri-m1-techniques-de-test/master/checkstyle_resultats.json&color=success)
-[![Javadoc](https://img.shields.io/badge/Javadoc-available-brightgreen.svg)](http://127.0.0.1:5500/target/site/apidocs/index.html)
+[![Javadoc](https://img.shields.io/badge/Javadoc-available-brightgreen.svg)](http://127.0.0.1:5500/target/site/apidocs/index.html) 
 
 
 ### Rapport du TP6
