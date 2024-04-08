@@ -13,6 +13,82 @@ public class RocketPokemonFactoryTest {
     public void setUp() {
         factory = new RocketPokemonFactory();
     }
+
+    @Test
+public void testUnmappedIndex() {
+    Pokemon pokemon = factory.createPokemon(999, 100, 100, 1000, 10);
+    assertNotNull(pokemon);
+    assertEquals("Expected default pokemon name for unmapped index", "MISSINGNO", pokemon.getName());
+}
+
+
+
+@Test
+public void testGeneratedStatsRange() {
+    Pokemon pokemon = factory.createPokemon(1, 100, 100, 1000, 10);
+    assertTrue("Attack stat should be non-negative", pokemon.getAttack() >= 0);
+    assertTrue("Defense stat should be non-negative", pokemon.getDefense() >= 0);
+    assertTrue("Stamina stat should be non-negative", pokemon.getStamina() >= 0);
+    // Supposons que la valeur maximale attendue pour une stat soit 200
+    assertTrue("Attack stat should not exceed max expected value", pokemon.getAttack() <= 200);
+    assertTrue("Defense stat should not exceed max expected value", pokemon.getDefense() <= 200);
+    assertTrue("Stamina stat should not exceed max expected value", pokemon.getStamina() <= 200);
+}
+
+    @Test
+public void testExtremeValuedust() {
+    int index = 1; 
+    int CP = 600; 
+    int hp = 100; 
+    int dust = Integer.MAX_VALUE; 
+    int candy = 10;
+    Pokemon pokemon = factory.createPokemon(index,CP, hp, dust, candy);
+    assertNotNull(pokemon);
+    assertEquals("Bulbasaur", pokemon.getName());
+    assertEquals(dust, pokemon.getDust());
+    
+}
+@Test
+public void testExtremeValueCP() {
+    int index = 1; 
+    int extremeCP = Integer.MAX_VALUE; 
+    int hp = 100; 
+    int dust = 5000; 
+    int candy = 10;
+    Pokemon pokemon = factory.createPokemon(index, extremeCP, hp, dust, candy);
+    assertNotNull(pokemon);
+    assertEquals("Bulbasaur", pokemon.getName());
+    assertEquals(extremeCP, pokemon.getCp());
+    
+}
+
+@Test
+public void testExtremeValuehp() {
+    int index = 1; 
+    int CP = 600; 
+    int hp = Integer.MAX_VALUE; 
+    int dust = 5000; 
+    int candy = 10;
+    Pokemon pokemon = factory.createPokemon(index, CP, hp, dust, candy);
+    assertNotNull(pokemon);
+    assertEquals("Bulbasaur", pokemon.getName());
+    assertEquals(hp, pokemon.getHp());
+    
+}
+@Test
+public void testExtremeValuecandy() {
+    int index = 1; 
+    int CP = 600; 
+    int hp = 100; 
+    int dust = 5000; 
+    int candy = Integer.MAX_VALUE;
+    Pokemon pokemon = factory.createPokemon(index,CP, hp, dust, candy);
+    assertNotNull(pokemon);
+    assertEquals("Bulbasaur", pokemon.getName());
+    assertEquals(candy, pokemon.getCandy());
+    
+}
+    
     @Test
     public void testCreatePokemonForUnmappedIndex() {
         int unmappedIndex = 2; // Cet indice n'est volontairement pas sur la map
