@@ -2,12 +2,16 @@ Abakar Oumar Tidjane junior
 ILSEN classique
 # UCE Génie Logiciel Avancé : Techniques de tests
 
+## Notes et observations
+Le plus gros problème rencontré était celui de la configuration des environnements.En effet,pour une raison que j'ignore totalement,mon compte github ne pouvait absolument pas s'enregistrer sur circleci,car à chaque fois que j'y entrais mes coordonnées, circleci me redirigeait vers sa page de connexion comme si de rien n'était sans même m'afficher un seul message.J'ai alors effectué une grosse quantité de commits me disant que peut-être que l'intégration continue avait marché.Ce n'est que plusieurs semaines après que circleci a commencé à fonctionner comme par magie...Peut-être est-ce dû au fait que j'ai crée un dossier caché contenant config.yml.
+
 ## MesBadges
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/juniorabakar/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/juniorabakar/ceri-m1-techniques-de-test/tree/master)
 [![codecov](https://codecov.io/gh/juniorabakar/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=UT2KBPTUOI)](https://codecov.io/gh/juniorabakar/ceri-m1-techniques-de-test)
 ![Checkstyle](https://img.shields.io/badge/dynamic/json?label=checkstyle&query=$.errors&suffix=_errors&url=https://raw.githubusercontent.com/juniorabakar/ceri-m1-techniques-de-test/master/checkstyle_resultats.json&color=success)
 [![Javadoc](https://img.shields.io/badge/Javadoc-available-brightgreen.svg)](http://127.0.0.1:5500/target/apidocs/fr/univavignon/pokedex/api/package-summary.html)
+
 
 ### Rapport du TP6
 La Team Rocket, en parfaits farfadets malicieux qu'ils sont, a concocté une implémentation de RocketPokemonFactory pour le moins originale.Leur version inclut un Pikachu d'Ash surboosté pour les indices négatifs.Puis, il y a "MISSINGNO", une légende urbaine devenant réalité pour tout indice non mappé(0).Cela souligne un comportement intentionnel pour gérer des cas particuliers ou des easter eggs.L'utilisation de UnmodifiableMap assure que la map ne peut pas être modifiée après son initialisation, renforçant l'immuabilité et la sécurité.Le problème est que non seulement les statistique d'attaque,de défense,d'endurance et d'iv sont complètement aléatoires et la map n'étant pas terminé, je ne pourrais pas avoir des Pokémon comme salamèche en nom.
