@@ -1,10 +1,6 @@
 Abakar Oumar Tidjane junior
 ILSEN classique
-# UCE Génie Logiciel Avancé : Techniques de tests
-
-## Notes et observations
-Le plus gros problème rencontré était celui de la configuration des environnements.En effet,pour une raison que j'ignore totalement,mon compte github ne pouvait absolument pas s'enregistrer sur circleci,car à chaque fois que j'y entrais mes coordonnées, circleci me redirigeait vers sa page de connexion comme si de rien n'était sans même m'afficher un seul message.Cela a même fait bugger mon autre compte Github sur ce projet.J'ai alors effectué une grosse quantité de commits me disant que peut-être que l'intégration continue avait marché.Ce n'est que plusieurs semaines après que circleci a commencé à fonctionner comme par magie...Peut-être est-ce dû au fait que j'ai crée un dossier caché contenant config.yml.
-
+# Génie Logiciel Avancé : Techniques de tests
 ## MesBadges
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/juniorabakar/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/juniorabakar/ceri-m1-techniques-de-test/tree/master)
