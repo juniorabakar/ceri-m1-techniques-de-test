@@ -3,7 +3,6 @@ ILSEN classique
 # Génie Logiciel Avancé : Techniques de tests
 ## MesBadges
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/juniorabakar/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/juniorabakar/ceri-m1-techniques-de-test/tree/master)
 [![codecov](https://codecov.io/gh/juniorabakar/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=UT2KBPTUOI)](https://codecov.io/gh/juniorabakar/ceri-m1-techniques-de-test)
 ![Checkstyle](https://img.shields.io/badge/dynamic/json?label=checkstyle&query=$.errors&suffix=_errors&url=https://raw.githubusercontent.com/juniorabakar/ceri-m1-techniques-de-test/master/checkstyle_resultats.json&color=success)
 [![Javadoc](https://img.shields.io/badge/Javadoc-available-brightgreen.svg)](https://juniorabakar.github.io/ceri-m1-techniques-de-test/) 
